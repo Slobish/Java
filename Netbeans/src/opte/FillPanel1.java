@@ -1,0 +1,645 @@
+package opte;
+
+import javax.swing.ComboBoxModel;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author dell
+ */
+public class FillPanel1 extends javax.swing.JPanel {
+
+   
+    public FillPanel1() 
+    {
+        initComponents();
+    }
+    
+    
+    public String getModel()
+    {
+        return ModelField.getText();
+    }
+    public void setModel(String text)
+    {
+        ModelField.setText(text);
+    }
+    public  String getSNumber()
+    {
+        return SerialField.getText();
+    }
+    public void setSNumber(String text)
+    {
+        SerialField.setText(text);
+    }
+    public  String getBrand()
+    {
+        return  BrandField.getText();
+    }
+    public void setBrand(String text)
+    {
+        String b="";
+        b.concat(text);
+        BrandField.setText(b);
+    }
+    public  String getConstant()
+    {
+        return ConstantField.getText();
+    }
+    public void setConstant(String text)
+    {
+        String b="";
+        b.concat(text);
+        ConstantField.setText(b);
+    }
+    public void setConsUnit(String unit)
+    {
+        int i=UnitConstant.getItemCount();
+        
+        while(i >= 0)
+        {
+            if(UnitConstant.getItemAt(i-1).equals(unit))
+            {
+                
+                break;
+            }
+            else i--;
+        }
+        UnitConstant.setSelectedIndex(i-1);
+    }
+    public String getConsUnit()
+    {
+        return UnitConstant.getItemAt(UnitConstant.getSelectedIndex());
+    }
+    public  String getWay()
+    {
+        return WayBox.getItemAt(WayBox.getSelectedIndex());
+    }
+    public String getNameCAM()
+    {
+        return NameField.getText();
+    }
+    public void setNameCAM(String text)
+    {
+        String b="";
+        b=b.concat(text);
+        NameField.setText(b);
+    }
+    
+    public void setClassBox(String b)
+    {
+        String unit=" ";
+        unit=unit+b;
+       
+        int i=ClassBox.getItemCount();
+        
+        
+        while(i > 1)
+        {
+            if(ClassBox.getItemAt(i-1).equals(unit))
+            {
+                
+                break;
+            }
+            else i--;
+        }
+        ClassBox.setSelectedIndex(i-1);
+       
+    }
+    public String getClassBox()
+    {
+        return ClassBox.getItemAt(ClassBox.getSelectedIndex());
+    }
+    public String getVTRATIO()
+    {
+        return VT1Field.getText()+"/"+VT2Field.getText();
+    }
+    public String getCTRATIO()
+    {
+        return CT1Field.getText()+"/"+CT2Field.getText();
+    }
+    public void setPhase(String unit)
+    {
+        int i=PhaseBox.getItemCount();
+        
+        while(i > 0)
+        {
+            if(PhaseBox.getItemAt(i-1).equals(unit))
+            {
+                
+                break;
+            }
+            else i--;
+        }
+        PhaseBox.setSelectedIndex(i-1);
+    }
+    public String getPhase()
+    {
+        return PhaseBox.getItemAt(PhaseBox.getSelectedIndex());
+    }
+    public void setVoltage(String Comp)
+    {
+        Voltaje1Field.setText(Comp.substring(0,Comp.indexOf("x")));
+        Voltaje2Field.setText(Comp.substring(Comp.indexOf("x")+1,Comp.indexOf("/")));
+        Voltaje3Field.setText(Comp.substring(Comp.indexOf("/")+1));
+    }
+    public void setCurrent(String Comp)
+    {
+        Current1Field.setText(Comp.substring(0,Comp.indexOf("x")));
+        Current2Field.setText(Comp.substring(Comp.indexOf("x")+1,Comp.indexOf("/")));
+        Current3Field.setText(Comp.substring(Comp.indexOf("/")+1));
+    }
+  
+    public void setWire(String unit)
+    {
+        int i=WireBox.getItemCount();
+        
+        while(i > 0)
+        {
+            if(WireBox.getItemAt(i-1).equals(unit))
+            {
+                
+                break;
+            }
+            else i--;
+        }
+        WireBox.setSelectedIndex(i-1);
+    }
+    public String getWire()
+    {
+        return WireBox.getItemAt(WireBox.getSelectedIndex());
+    }
+    public String getType()
+    {
+        if(TypeBox.getItemAt(TypeBox.getSelectedIndex()).equals("Solido")) return "S";
+        else return "";
+    }
+    public String getCurrent()
+    {
+        return Current1Field.getText()+"x"+Current2Field.getText()+"/"+Current3Field.getText();
+    }
+    public String getVoltage()
+    {
+        return Voltaje1Field.getText()+"x"+Voltaje2Field.getText()+"/"+Voltaje3Field.getText();
+    }
+    public String getTemp()
+    {
+        return TempField.getText();
+    }
+    public String getCompensation()
+    {
+        if(Compensation.isSelected())return"SI";
+        else return"NO";
+              
+    }
+    
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        SerialField = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        PhaseBox = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        WireBox = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        ClassBox = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
+        TypeBox = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        ConstantField = new javax.swing.JTextField();
+        UnitConstant = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
+        Voltaje3Field = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        Current3Field = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        BrandField = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        ModelField = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        VT1Field = new javax.swing.JTextField();
+        VT2Field = new javax.swing.JTextField();
+        CT2Field = new javax.swing.JTextField();
+        CT1Field = new javax.swing.JTextField();
+        VTUnitBox = new javax.swing.JComboBox<>();
+        CTUnitBox = new javax.swing.JComboBox<>();
+        Compensation = new javax.swing.JCheckBox();
+        WayBox = new javax.swing.JComboBox<>();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        TempField = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        NameField = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        Voltaje2Field = new javax.swing.JTextField();
+        Current2Field = new javax.swing.JTextField();
+        Current1Field = new javax.swing.JTextField();
+        Voltaje1Field = new javax.swing.JTextField();
+
+        setPreferredSize(new java.awt.Dimension(550, 419));
+
+        jLabel1.setText("Numero de serie");
+
+        PhaseBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "0" }));
+
+        jLabel3.setText("Fases");
+
+        jLabel4.setText("Hilos");
+
+        WireBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" }));
+
+        jLabel5.setText("Clase");
+
+        ClassBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0.5", "0.2", "1", "2" }));
+
+        jLabel6.setText("Tipo");
+
+        TypeBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Solido", "Mecanico" }));
+
+        jLabel7.setText("Constante");
+
+        ConstantField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConstantFieldActionPerformed(evt);
+            }
+        });
+
+        UnitConstant.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "i/kWh", "i/Wh", "i/Ws", "i/kWs", "i/MWh", "Wh/i", "kWh/i", "MWh/i", "Ws/i", "kWs/i" }));
+
+        jLabel8.setText("Voltaje");
+
+        jLabel11.setText("Corriente");
+
+        jLabel12.setText("x");
+
+        jLabel13.setText("/");
+
+        jLabel14.setText("V");
+
+        jLabel15.setText("A");
+
+        jLabel16.setText("Fabricante");
+
+        BrandField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BrandFieldActionPerformed(evt);
+            }
+        });
+
+        jLabel17.setText("Modelo");
+
+        jLabel18.setText("VT");
+
+        jLabel19.setText("CT");
+
+        jLabel2.setText("/");
+
+        jLabel21.setText("/");
+
+        VT1Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VT1FieldActionPerformed(evt);
+            }
+        });
+
+        VT2Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VT2FieldActionPerformed(evt);
+            }
+        });
+
+        VTUnitBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "V", "KV", "MV" }));
+
+        CTUnitBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "KA", "MA" }));
+
+        Compensation.setText("Compensación por pérdida");
+
+        WayBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Consumo", "Generacion" }));
+
+        jLabel20.setText("Sentido de inyeccion");
+
+        jLabel22.setText("Temperatura ambiente");
+
+        TempField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TempFieldActionPerformed(evt);
+            }
+        });
+
+        jLabel23.setText("°C");
+
+        jLabel24.setText("Nombre");
+
+        NameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NameFieldActionPerformed(evt);
+            }
+        });
+
+        jLabel25.setText("x");
+
+        jLabel26.setText("/");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel20)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(WayBox, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel16)
+                                    .addComponent(jLabel17)
+                                    .addComponent(jLabel24)
+                                    .addComponent(jLabel7))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(ConstantField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(UnitConstant, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(ModelField, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(BrandField, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(SerialField, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(NameField))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel22)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(TempField, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel23)
+                        .addGap(82, 82, 82)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel3))
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(PhaseBox, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ClassBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(16, 16, 16)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(WireBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(TypeBox, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(58, 69, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel19))
+                        .addGap(23, 23, 23)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(CT1Field)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel21)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(CT2Field, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(CTUnitBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(VT1Field)
+                                                .addGap(8, 8, 8)
+                                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(VT2Field, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(VTUnitBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(16, 16, 16))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(Current1Field)
+                                            .addComponent(Voltaje1Field))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(Voltaje2Field, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel26)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(Voltaje3Field, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(Current2Field, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel13)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(Current3Field, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel15)
+                                    .addComponent(jLabel14))
+                                .addGap(41, 41, 41))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Compensation)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ClassBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6)
+                            .addComponent(TypeBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(SerialField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))))
+                .addGap(17, 17, 17)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(WireBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel4)
+                        .addComponent(PhaseBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel3)
+                        .addComponent(jLabel16)
+                        .addComponent(BrandField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Voltaje2Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel26)
+                            .addComponent(Voltaje3Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel14)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ModelField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel17)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel8)
+                                .addComponent(Voltaje1Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(NameField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel24))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Current1Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel11)
+                        .addComponent(Current2Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Current3Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel13)
+                        .addComponent(jLabel15)))
+                .addGap(19, 19, 19)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(VT1Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(VT2Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(VTUnitBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(UnitConstant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ConstantField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CT2Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel21)
+                    .addComponent(CT1Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CTUnitBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel20)
+                    .addComponent(WayBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TempField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel23)
+                    .addComponent(jLabel22)
+                    .addComponent(Compensation))
+                .addContainerGap(162, Short.MAX_VALUE))
+        );
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void ConstantFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConstantFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ConstantFieldActionPerformed
+
+    private void TempFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TempFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TempFieldActionPerformed
+
+    private void NameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NameFieldActionPerformed
+
+    private void VT2FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VT2FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_VT2FieldActionPerformed
+
+    private void VT1FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VT1FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_VT1FieldActionPerformed
+
+    private void BrandFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrandFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BrandFieldActionPerformed
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField BrandField;
+    private javax.swing.JTextField CT1Field;
+    private javax.swing.JTextField CT2Field;
+    private javax.swing.JComboBox<String> CTUnitBox;
+    private javax.swing.JComboBox<String> ClassBox;
+    private javax.swing.JCheckBox Compensation;
+    private javax.swing.JTextField ConstantField;
+    private javax.swing.JTextField Current1Field;
+    private javax.swing.JTextField Current2Field;
+    private javax.swing.JTextField Current3Field;
+    private javax.swing.JTextField ModelField;
+    private javax.swing.JTextField NameField;
+    private javax.swing.JComboBox<String> PhaseBox;
+    private javax.swing.JTextField SerialField;
+    private javax.swing.JTextField TempField;
+    private javax.swing.JComboBox<String> TypeBox;
+    private javax.swing.JComboBox<String> UnitConstant;
+    private javax.swing.JTextField VT1Field;
+    private javax.swing.JTextField VT2Field;
+    private javax.swing.JComboBox<String> VTUnitBox;
+    private javax.swing.JTextField Voltaje1Field;
+    private javax.swing.JTextField Voltaje2Field;
+    private javax.swing.JTextField Voltaje3Field;
+    private javax.swing.JComboBox<String> WayBox;
+    private javax.swing.JComboBox<String> WireBox;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    // End of variables declaration//GEN-END:variables
+}
